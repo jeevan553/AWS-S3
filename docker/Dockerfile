@@ -8,6 +8,7 @@ LABEL maintainer="Drone.IO Community <drone-dev@googlegroups.com>" \
   org.label-schema.vendor="Drone.IO Community" \
   org.label-schema.schema-version="1.0"
 
-ADD release/linux/amd64/drone-s3 /bin/
+#ADD release/linux/amd64/drone-s3 /bin/
+ADD drone-s3 /bin/
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["/bin/drone-s3"]
